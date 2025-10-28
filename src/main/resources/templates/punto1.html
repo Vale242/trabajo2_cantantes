@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Sector 1 - Cantantes</title>
+</head>
+<body>
+<h2>Sector 1 – Cantantes y su Productor</h2>
+
+<!-- Lista de los cantantes con álbumes reales -->
+<h3>Lista de Cantantes:</h3>
+<ul>
+  <li th:each="cantante : ${cantantesStack}">
+    <strong>Nombre:</strong> <span th:text="${cantante.nombre}"></span> |
+    <strong>Género:</strong> <span th:text="${cantante.genero}"></span> |
+    <strong>Proyección:</strong> <span th:text="${cantante.proyeccion}"></span> |
+    <strong>Total Álbumes:</strong> <span th:text="${cantante.albumes.size()}"></span>
+
+    <!-- Mostrar nombres reales de álbumes -->
+    <div style="margin-left: 20px; font-size: 0.9em; color: #666;">
+      <strong>Álbumes:</strong>
+      <ul>
+        <li th:each="albumId : ${cantante.albumes}">
+          <span th:text="${@cantanteRepository.getNombreAlbum(albumId)}"></span>
+        </li>
+      </ul>
+    </div>
+  </li>
+</ul>
+
+<!-- Información del Productor -->
+<div th:if="${productor != null}">
+  <h3>Información del Productor</h3>
+  <p><strong>Nombre:</strong> <span th:text="${productor.nombre}"></span></p>
+  <p><strong>Discográfica:</strong> <span th:text="${productor.discografica}"></span></p>
+  <p><strong>Años de experiencia:</strong> <span th:text="${productor.añosExperiencia}"></span></p>
+</div>
+
+</body>
+</html>

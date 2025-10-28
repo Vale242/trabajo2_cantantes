@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Punto 2 - Comparación de Iteradores</title>
+</head>
+<body>
+<h2>Punto 2 – Comparación de Iteradores</h2>
+
+<h3>Desde Stack (usando ListIterator) - <span th:text="${desdeStack.size()}"></span> cantantes</h3>
+<ul>
+    <li th:each="texto, iterStat : ${desdeStack}">
+        <span th:text="${iterStat.index + 1}"></span>. <span th:text="${texto}"></span>
+    </li>
+</ul>
+
+<h3>Desde Deque del Productor (usando Iterator) - <span th:text="${desdeDeque.size()}"></span> cantantes</h3>
+<ul>
+    <li th:each="texto, iterStat : ${desdeDeque}">
+        <span th:text="${iterStat.index + 1}"></span>. <span th:text="${texto}"></span>
+    </li>
+</ul>
+
+<p><strong>Nota:</strong> Ambos muestran la misma lista pero usando diferentes tipos de iteradores.</p>
+
+</body>
+</html>

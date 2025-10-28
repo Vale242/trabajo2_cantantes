@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Punto 3 - Filtrado con Programación Funcional</title>
+</head>
+<body>
+<h2>Punto 3 – Programación Funcional</h2>
+
+<h3>Cantantes con Proyección EMERGENTE -
+    <span th:text="${cantantesEmergentes.size()}"></span> encontrados
+</h3>
+
+<ul th:if="${!cantantesEmergentes.empty}">
+    <li th:each="nombre, iterStat : ${cantantesEmergentes}">
+        <span th:text="${iterStat.index + 1}"></span>. <span th:text="${nombre}"></span>
+    </li>
+</ul>
+
+<div th:if="${cantantesEmergentes.empty}">
+    <p style="color: blue;">No se encontraron cantantes con proyección EMERGENTE</p>
+</div>
+
+<p><strong>Técnica utilizada:</strong> Streams y programación funcional para filtrar cantantes.</p>
+
+</body>
+</html>
