@@ -29,21 +29,21 @@ public class CantanteRepository {
     }
 
     private void inicializarNombresAlbumes() {
-        // CONAN GRAY
+        // CONAN GRAY <3
         nombresAlbumes.put(1, "Sunset Season");
         nombresAlbumes.put(2, "Kid Krow");
         nombresAlbumes.put(3, "Superache");
         nombresAlbumes.put(4, "Found Heaven");
         nombresAlbumes.put(5, "Ultimate Edition");
 
-        // LAUFEY
+        // LAUFEY <3
         nombresAlbumes.put(6, "Everything I Know About Love");
         nombresAlbumes.put(7, "Typical of Me");
         nombresAlbumes.put(8, "Bewitched");
         nombresAlbumes.put(9, "A Night At The Symphony");
         nombresAlbumes.put(10, "New Album 2024");
 
-        // RICKY MONTGOMERY
+        // RICKY MONTGOMERY <3
         nombresAlbumes.put(11, "Montgomery Ricky");
         nombresAlbumes.put(12, "It's 2016 Somewhere");
         nombresAlbumes.put(13, "Edits");
@@ -57,14 +57,14 @@ public class CantanteRepository {
         nombresAlbumes.put(19, "Hit Me Hard and Soft");
         nombresAlbumes.put(20, "Live at Third Man Records");
 
-        // OLIVIA RODRIGO
+        // OLIVIA RODRIGO <3
         nombresAlbumes.put(21, "SOUR");
         nombresAlbumes.put(22, "GUTS");
         nombresAlbumes.put(23, "SOUR Prom");
         nombresAlbumes.put(24, "GUTS World Tour");
         nombresAlbumes.put(25, "The GUTS Deluxe");
 
-        // CANTANTES EXTRA
+        // CANTANTES EXTRA (solo para que se demuestre que si se está filtrando)
         nombresAlbumes.put(26, "The Rise and Fall of Ziggy Stardust");
         nombresAlbumes.put(27, "Aladdin Sane");
         nombresAlbumes.put(28, "Station to Station");
@@ -115,12 +115,12 @@ public class CantanteRepository {
         cantantesStack.push(cantante4);
         cantantesStack.push(cantante5);
 
-        // CREAR PRODUCTOR - ahora funciona porque productor no es final
+        // CREAR PRODUCTOR
         productor = new Productor("MARK_RONSON", "Sony Music", 15);
         productor.setCantantes(new ArrayDeque<>(cantantesStack));
 
         // ==================== CANTANTES EXTRA ====================
-        Cantante extra1 = new Cantante("DAVID_BOWIE", Genero.ROCK, Proyeccion.CLASICO);
+        Cantante extra1 = new Cantante("DAVID_BOWIE", Genero.ROCK, Proyeccion.CLASICO);//<33333
         Cantante extra2 = new Cantante("NINA_SIMONE", Genero.JAZZ, Proyeccion.CLASICO);
         Cantante extra3 = new Cantante("NIGHTWISH", Genero.METAL, Proyeccion.INTERNACIONAL);
         Cantante extra4 = new Cantante("SYSTEM_OF_A_DOWN", Genero.METAL, Proyeccion.INTERNACIONAL);
@@ -149,7 +149,7 @@ public class CantanteRepository {
         System.out.println("Productor: " + productor.getNombre());
     }
 
-    // Método para obtener el nombre real del álbum
+    // Método para obtener el nombre real del álbum y no el año
     public String getNombreAlbum(int idAlbum) {
         return nombresAlbumes.getOrDefault(idAlbum, "Álbum desconocido");
     }

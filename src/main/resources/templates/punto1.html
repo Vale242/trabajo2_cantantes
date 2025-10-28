@@ -7,7 +7,6 @@
 <body>
 <h2>Sector 1 – Cantantes y su Productor</h2>
 
-<!-- Lista de los cantantes con álbumes reales -->
 <h3>Lista de Cantantes:</h3>
 <ul>
   <li th:each="cantante : ${cantantesStack}">
@@ -16,7 +15,6 @@
     <strong>Proyección:</strong> <span th:text="${cantante.proyeccion}"></span> |
     <strong>Total Álbumes:</strong> <span th:text="${cantante.albumes.size()}"></span>
 
-    <!-- Mostrar nombres reales de álbumes -->
     <div style="margin-left: 20px; font-size: 0.9em; color: #666;">
       <strong>Álbumes:</strong>
       <ul>
@@ -28,7 +26,6 @@
   </li>
 </ul>
 
-<!-- Información del Productor -->
 <div th:if="${productor != null}">
   <h3>Información del Productor</h3>
   <p><strong>Nombre:</strong> <span th:text="${productor.nombre}"></span></p>

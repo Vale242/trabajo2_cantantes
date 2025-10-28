@@ -24,7 +24,7 @@ public class CantanteController {
     public String index() {
         return "index";
     }
-    // punto 1 -> Mostrar los cantantes (punto 1)
+
     @GetMapping({"/punto1"})
     public String punto1(Model model) {
         Stack<Cantante> cantantesStack = repo.getCantantesStack();
@@ -66,7 +66,6 @@ public class CantanteController {
         Stack<Cantante> cantantesStack = repo.getCantantesStack();
         Deque<Cantante> dequeCantantes = new ArrayDeque<>(cantantesStack);
 
-        // Filtramos los cantantes con proyección EMERGENTE
         List<String> cantantesEmergentes = dequeCantantes.stream()
                 .filter(c -> c.getProyeccion() == Proyeccion.EMERGENTE)
                 .map(Cantante::getNombre)
@@ -78,7 +77,6 @@ public class CantanteController {
 
     @GetMapping("/punto4")
     public String punto4(Model model) {
-        // CORREGIDO: Contar la cantidad de álbumes, no sumar los años
         Function<Cantante, Integer> contarAlbumes = (Cantante c) ->
                 c.getAlbumes().size();  // ← Solo contar, no sumar
 
@@ -96,17 +94,13 @@ public class CantanteController {
 
     @GetMapping("/punto5")
     public String punto5(Model model) {
-        // Tomamos un cantante de ejemplo (el último del stack)
         Cantante ejemplo = repo.getCantantesStack().peek();
 
-        // CORREGIDO: Contar la cantidad de álbumes, no sumar los años
         Function<Cantante, Integer> funcion = (Cantante c) ->
                 c.getAlbumes().size();  // ← Solo contar, no sumar
 
-        // Llamamos al método dentro del propio objeto cantante
         int total = ejemplo.verTotalAlbumes(funcion);
 
-        // Enviamos datos a la vista
         model.addAttribute("ejemploNombre", ejemplo.getNombre());
         model.addAttribute("ejemploTotal", total);
 

@@ -9,7 +9,6 @@ public class Productor {
     private int añosExperiencia;
     private Deque<Cantante> cantantes;
 
-    // Constructor corregido
     public Productor(String nombre, String discografica, int añosExperiencia) {
         this.nombre = nombre;
         this.discografica = discografica;
@@ -17,7 +16,6 @@ public class Productor {
         this.cantantes = new ArrayDeque<>();
     }
 
-    // Getters y Setters
     public void setNombre(String nombre) { this.nombre = nombre; }
     public void setDiscografica(String discografica) { this.discografica = discografica; }
     public void setAñosExperiencia(int añosExperiencia) { this.añosExperiencia = añosExperiencia; }
